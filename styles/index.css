@@ -4,8 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #0d1017;
+  justify-content: center;
+}
+
 #hero {
-  background-color: #0b131e;
+  margin: 0 auto;
   height: 100vh;
   display: flex;
   padding: 40px;
@@ -13,13 +18,15 @@
 
 .hero-left {
   display: flex;
-  background-color: #202c3c;
+  background-color: #010409;
   max-width: 50vw;
   border-radius: 10px;
+  align-items: center;
 }
 
 .logo {
   width: 100%;
+  height: fit-content;
 }
 
 .hero-right {
@@ -52,17 +59,23 @@
 .get-started {
   border: none;
   padding: 0.5rem 1rem;
-  background-color: #0196fc;
+  background-color: #258437;
+  color: #fff;
   border-radius: 20px;
   cursor: pointer;
 }
 
 .get-started a {
   text-decoration: none;
-  color: #fff;
 }
 
 .get-started:active {
-  transform: translate(0, 2px);
-  transition: 0.5s;
+  transform: translate(0, 4px);
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 425px) {
+  .hero-left {
+    display: none;
+  }
 }
