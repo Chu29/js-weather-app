@@ -1,5 +1,4 @@
 'use strict'
-const apiKey = '26f067e98b7e4aa7b3f152800252609'
 const search = document.querySelector('.search-bar')
 const searchBtn = document.querySelector('.search-btn')
 const city = document.querySelector('.city-name')
