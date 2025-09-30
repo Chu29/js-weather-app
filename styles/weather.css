@@ -3,3 +3,56 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #0d1017;
+}
+
+.current-city img {
+  width: 200px;
+}
+
+.today-forecast img {
+  width: 100px;
+}
+
+.week-day-forecast img {
+  width: 50px;
+}
+
+.main {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  gap: 40px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.search-bar {
+  background-color: #0d1017;
+  color: #fff;
+  border: 1px solid #288641;
+  border-radius: 45px;
+  padding: 10px;
+}
+
+.search-btn {
+  padding: 2px 10px;
+  border: none;
+  border-radius: 45px;
+  background-color: #288641;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-btn:active {
+  transform: translate(0, 4px);
+  transition: 0.2s;
+}
