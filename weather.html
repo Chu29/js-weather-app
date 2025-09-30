@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/weather.css" />
+  <title>Abreeze Weather App</title>
+</head>
+
+<body>
+  <nav class="nav-bar"></nav>
+  <main class="main">
+    <div class="search">
+      <input type="text" class="search-bar">
+    </div>
+    <div class="current-city">
+      <div class="city">
+        <h2>Bamenda</h2>
+        <p>Chance of rain: 62%</p>
+      </div>
+      <img src="images/clouds.png" alt="" srcset="" />
+      <span>21&deg;</span>
+    </div>
+    <div class="today-forecast">
+      <p class="title">TODAY'S FORECAST</p>
+      <table>
+        <thead>
+          <th>9:00 AM</th>
+          <th>12:00 pM</th>
+          <th>3:00 PM</th>
+        </thead>
+        <tbody>
+          <td><img src="images/drizzle.png" alt="" /></td>
+          <td><img src="images/clear.png" alt="" /></td>
+          <td><img src="images/rain.png" alt="" /></td>
+        </tbody>
+        <tfoot>
+          <td>25&deg;</td>
+          <td>35&deg;</td>
+          <td>19&deg;</td>
+        </tfoot>
+      </table>
+    </div>
+    <div class="7day-forecast">
+      <p class="title">7-DAY FORECAST</p>
+      <table>
+        <tr>
+          <td>TODAY</td>
+          <td>
+            <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+          </td>
+          <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+        <td>TODAY</td>
+        <td>
+          <img src="images/clear.png" alt="" srcset="" /><span>SUNNY</span>
+        </td>
+        <td>30&deg;</td>
+        </tr>
+      </table>
+    </div>
+    <div class="air-conditions">
+      <p class="title">AIR CONDITIONS</p>
+      <div class="details">
+        <div class="humidity"><img src="images/humidity.png" alt="" srcset=""></div>
+        <div class="wind-speed"><img src="images/wind.png" alt="" srcset=""></div>
+      </div>
+    </div>
+  </main>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
