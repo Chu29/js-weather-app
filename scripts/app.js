@@ -10,7 +10,7 @@ const windSpeed = document.querySelector('.wind-speed-det')
 
 // Fetch the current weather
 const getCurrentWeather = async (location) => {
-  const apiCurrentURL = `http://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
+  const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
   const response = await fetch(apiCurrentURL)
   const data = await response.json()
   console.table(data)
@@ -21,7 +21,7 @@ const getCurrentWeather = async (location) => {
 }
 
 const getAirCondition = async (location) => {
-  const apiCurrentURL = `http://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
+  const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
   const response = await fetch(apiCurrentURL)
   const data = await response.json()
   humidity.textContent = `${data.current.humidity}%`
