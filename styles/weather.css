@@ -22,10 +22,15 @@ body {
   width: 50px;
 }
 
+.air-conditions img {
+  width: 35px;
+}
+
 .main {
   color: #fff;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 20px 0;
   gap: 40px;
 }
@@ -33,6 +38,7 @@ body {
 .search {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .search-bar {
@@ -55,4 +61,68 @@ body {
 .search-btn:active {
   transform: translate(0, 4px);
   transition: 0.2s;
+}
+
+.current-city {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.city {
+  text-align: center;
+}
+
+.today-forecast {
+  background-color: #010409;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.today-forecast table {
+  text-align: center;
+}
+
+.week-day-forecast {
+  background-color: #010409;
+  padding: 20px;
+  border-radius: 10px;
+  width: 348px;
+
+}
+
+.week-day-forecast table tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #288641;
+  margin-bottom: 15px;
+  width: 300px;
+}
+
+.air-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  background-color: #010409;
+  padding: 20px;
+  width: 348px;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.humidity,
+.wind-speed {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
