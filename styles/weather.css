@@ -81,6 +81,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 15px;
+  display: none;
 }
 
 .today-forecast table {
@@ -92,6 +93,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 348px;
+  display: none;
 }
 
 .week-day-forecast table tr {
