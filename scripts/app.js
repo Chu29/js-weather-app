@@ -32,3 +32,8 @@ searchBtn.addEventListener('click', () => {
   getCurrentWeather(search.value)
   getAirCondition(search.value)
 })
+
+searchBtn.addEventListener('touchend', () => {
+  getCurrentWeather(search.value)
+  getAirCondition(search.value)
+})
