@@ -22,7 +22,7 @@ main {
   border-radius: 15px;
 }
 
-input {
+.search-bar {
   margin: 0;
   border: none;
   border-radius: 15px 0 0 15px;
@@ -34,7 +34,7 @@ input {
   background-color: #202c3c;
 }
 
-.add-btn {
+.search-btn {
   background-color: #008cb9;
   border-radius: 0 15px 15px 0;
   padding: 10px;
