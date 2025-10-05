@@ -133,6 +133,11 @@ main {
 .ac-card {
   display: flex;
   gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #ffffff1a;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5.8px);
 }
 
 .ac-card p:first-child {
@@ -171,7 +176,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
   border-radius: 5px;
   background: #ffffff1a;
