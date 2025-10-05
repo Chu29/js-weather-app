@@ -5,9 +5,9 @@
 }
 
 body {
-  display: flex;
   justify-content: center;
-  background-color: #0d1017;
+  background: #0d1017;
+  color: #fff;
 }
 
 .current-city img {
@@ -26,7 +26,11 @@ body {
   width: 35px;
 }
 
-.main {
+.logo {
+  width: 80px;
+}
+
+/* .main {
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -92,7 +96,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 348px;
-  display: none;
+  display: flex;
 }
 
 .week-day-forecast table tr {
@@ -125,4 +129,4 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-}
+} */
