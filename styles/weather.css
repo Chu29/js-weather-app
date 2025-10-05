@@ -8,11 +8,12 @@ body {
   background: #0b131e;
   color: #fff;
   padding: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 main {
-  margin: 0 auto;
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -68,6 +69,7 @@ main {
 .today-forecast h2 {
   font-size: 12px;
   margin-bottom: 12px;
+  color: #838a9a;
 }
 
 .tf-cards {
@@ -112,6 +114,7 @@ main {
 
 .air-conditions h2 {
   font-size: 12px;
+  color: #838a9a;
 }
 
 .ac-container {
@@ -132,7 +135,63 @@ main {
   gap: 10px;
 }
 
+.ac-card p:first-child {
+  color: #838a9a;
+}
+
+.ac-card p:last-child {
+  color: #ebf0f2;
+}
+
 .actemp {
   font-size: 2rem;
   font-weight: bolder;
+}
+
+.forecast {
+  width: 400px;
+  background: #202c3c;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.forecast h2 {
+  font-size: 12px;
+  margin-bottom: 4rem;
+  color: #838a9a;
+}
+
+.fc-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fc-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background: #ffffff1a;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5.8px);
+}
+
+.fc-condition {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.fctemp {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.day {
+  color: #ebf0f2;
 }
