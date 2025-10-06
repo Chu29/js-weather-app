@@ -10,7 +10,7 @@ const airData = [
   document.querySelector('.actemp'),
   document.querySelector('.acrain'),
   document.querySelector('.acwind'),
-  document.querySelector('.uvindex'),
+  document.querySelector('.uvindex')
 ]
 
 // Fetch the current weather
@@ -51,11 +51,11 @@ const getDailyForecastData = async (location) => {
 
   data.forecast.forecastday.forEach((day, index) => {
     let dayName = new Date(day.date).toLocaleDateString('en-US', {
-      weekday: 'short',
+      weekday: 'short'
     })
-    let temp = data.forecast.forecastday[index].day.avgtemp_c
-    let img = data.forecast.forecastday[index].day.condition.icon
-    let condition = data.forecast.forecastday[index].day.condition.text
+    const temp = data.forecast.forecastday[index].day.avgtemp_c
+    const img = data.forecast.forecastday[index].day.condition.icon
+    const condition = data.forecast.forecastday[index].day.condition.text
 
     if (index === 0) {
       dayName = 'Today'
@@ -66,7 +66,6 @@ const getDailyForecastData = async (location) => {
     fcweatherImg[index].src = img
     fcweatherCondition[index].innerHTML = condition
   })
-  console.log(data)
 }
 
 searchBtn.addEventListener('click', () => {
