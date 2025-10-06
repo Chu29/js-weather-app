@@ -100,8 +100,7 @@ const getDailyForecastData = async (location) => {
 
 // fetch hourly forecast data in 3 hours interval
 const getHourlyForecastData = async (location) => {
-  const hourlyCondition = [, , , , , , ...document.querySelectorAll('.card > img')
-  ] // eslint-disable-line
+  const hourlyCondition = [, , , , , , ...document.querySelectorAll('.card > img')] // eslint-disable-line
   const hourlyTemp = [, , , , , , ...document.querySelectorAll('.ttemp')] // eslint-disable-line
   console.log(hourlyCondition)
 
