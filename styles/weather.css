@@ -130,7 +130,7 @@ main {
 }
 
 .ttemp {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 900;
 }
 
@@ -224,11 +224,12 @@ main {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
+  font-size: 12px;
 }
 
 .fctemp {
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .day {
