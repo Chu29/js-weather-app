@@ -13,6 +13,33 @@ const airData = [
   document.querySelector('.uvindex')
 ]
 
+// get user location
+const getLocation = () => {
+  const success = (position) => {
+    console.log(position)
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude
+
+    const geolocation = `https://api-bdc.io/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+
+    const fetchLocation = async () => {
+      const response = await fetch(geolocation)
+      const data = await response.json()
+      const city = data.city
+      return city
+    }
+
+    return fetchLocation()
+  }
+
+  const error = () => {
+    alert('Unable to retrieve your location')
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error)
+  return success
+}
+
 // Fetch the current weather
 const getCurrentWeather = async (location) => {
   const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
