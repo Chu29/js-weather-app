@@ -13,14 +13,12 @@ const airData = [
   document.querySelector('.uvindex'),
 ]
 
-console.log(airData)
-
 // Fetch the current weather
 const getCurrentWeather = async (location) => {
   const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
   const response = await fetch(apiCurrentURL)
   const data = await response.json()
-  console.table(data)
+  // console.table(data)
   city.innerHTML = data.location.name
   weatherCondition.innerHTML = `${data.current.condition.text} : ${data.location.localtime}`
   currentTemp.innerHTML = `${data.current.temp_c} &deg;C`
@@ -28,6 +26,7 @@ const getCurrentWeather = async (location) => {
   weatherImg.style.width = '224px'
 }
 
+// fetch current air conditions
 const getAirCondition = async (location) => {
   const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
   const response = await fetch(apiCurrentURL)
@@ -38,7 +37,40 @@ const getAirCondition = async (location) => {
   airData[3].innerHTML = `${data.current.uv}`
 }
 
+// fetch forecast data for next 7 days
+const getDailyForecastData = async (location) => {
+  const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=7`
+  const response = await fetch(apiCurrentURL)
+  const data = await response.json()
+
+  const days = document.querySelectorAll('.day')
+
+  const forecastTemperature = document.querySelectorAll('.fctemp')
+  const fcweatherImg = document.querySelectorAll('.fc-condition > img')
+  const fcweatherCondition = document.querySelectorAll('.fc-condition > span')
+
+  data.forecast.forecastday.forEach((day, index) => {
+    let dayName = new Date(day.date).toLocaleDateString('en-US', {
+      weekday: 'short',
+    })
+    let temp = data.forecast.forecastday[index].day.avgtemp_c
+    let img = data.forecast.forecastday[index].day.condition.icon
+    let condition = data.forecast.forecastday[index].day.condition.text
+
+    if (index === 0) {
+      dayName = 'Today'
+    } else {
+      days[index].textContent = dayName
+    }
+    forecastTemperature[index].innerHTML = `${temp}&deg;`
+    fcweatherImg[index].src = img
+    fcweatherCondition[index].innerHTML = condition
+  })
+  console.log(data)
+}
+
 searchBtn.addEventListener('click', () => {
   getCurrentWeather(search.value)
   getAirCondition(search.value)
+  getDailyForecastData(search.value)
 })
