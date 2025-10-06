@@ -101,8 +101,8 @@ const getDailyForecastData = async (location) => {
 // fetch hourly forecast data in 3 hours interval
 const getHourlyForecastData = async (location) => {
   const hourlyCondition = [, , , , , , ...document.querySelectorAll('.card > img')
-  ]
-  const hourlyTemp = [, , , , , , ...document.querySelectorAll('.ttemp')]
+  ] // eslint-disable-line no-use-before-define
+  const hourlyTemp = [, , , , , , ...document.querySelectorAll('.ttemp')] // eslint-disable-line no-use-before-define
   console.log(hourlyCondition)
 
   const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=1`
