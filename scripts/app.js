@@ -49,7 +49,6 @@ const getCurrentWeather = async (location) => {
   const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
   const response = await fetch(apiCurrentURL)
   const data = await response.json()
-  // console.table(data)
   city.innerHTML = data.location.name
   weatherCondition.innerHTML = `${data.current.condition.text} : ${data.location.localtime}`
   currentTemp.innerHTML = `${data.current.temp_c} &deg;C`
