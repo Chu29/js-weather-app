@@ -15,29 +15,31 @@ const airData = [
 
 // get user location
 const getLocation = () => {
-  const success = (position) => {
-    console.log(position)
+  const getCoordinates = (position) => {
     const latitude = position.coords.latitude
     const longitude = position.coords.longitude
 
-    const geolocation = `https://api-bdc.io/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
-
-    const fetchLocation = async () => {
+    // fetch the location based on coordinates
+    const fetchLocation = async (lat, long) => {
+      const geolocation = `https://api-bdc.io/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`
       const response = await fetch(geolocation)
       const data = await response.json()
       const city = data.city
-      return city
+      getCurrentWeather(city)
+      getAirCondition(city)
+      getDailyForecastData(city)
+      getHourlyForecastData(city)
     }
 
-    return fetchLocation()
+    return fetchLocation(latitude, longitude)
   }
 
   const error = () => {
     alert('Unable to retrieve your location')
   }
 
-  navigator.geolocation.getCurrentPosition(success, error)
-  return success
+  navigator.geolocation.getCurrentPosition(getCoordinates, error)
+  return getCoordinates
 }
 
 getLocation()
@@ -100,21 +102,19 @@ const getDailyForecastData = async (location) => {
 
 // fetch hourly forecast data in 3 hours interval
 const getHourlyForecastData = async (location) => {
-  const hourlyCondition = [, , , , , , ...document.querySelectorAll('.card > img')] // eslint-disable-line
-  const hourlyTemp = [, , , , , , ...document.querySelectorAll('.ttemp')] // eslint-disable-line
-  console.log(hourlyCondition)
+  const hourlyCondition = [...document.querySelectorAll('.card > img')]
+  const hourlyTemp = [...document.querySelectorAll('.ttemp')]
 
   const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=1`
   const response = await fetch(apiCurrentURL)
   const data = await response.json()
 
   const hourData = [...data.forecast.forecastday[0].hour]
-  for (let i = 6; i <= 11; i++) {
+  for (let i = 0; i < hourData.length; i++) {
     const temp = hourData[i].temp_c
     hourlyTemp[i].innerHTML = `${temp}&deg;`
     hourlyCondition[i].src = hourData[i].condition.icon
   }
-  console.log(hourData)
 }
 
 searchBtn.addEventListener('click', () => {
