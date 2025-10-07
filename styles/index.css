@@ -5,8 +5,9 @@
 }
 
 body {
-  background-color: #0d1017;
+  background-color: #0b131f;
   justify-content: center;
+  font-family: Poppins, sans-serif;
 }
 
 #hero {
@@ -18,7 +19,7 @@ body {
 
 .hero-left {
   display: flex;
-  background-color: #010409;
+  background-color: #212c3d;
   max-width: 50vw;
   border-radius: 10px;
   align-items: center;
@@ -59,7 +60,7 @@ body {
 .get-started {
   border: none;
   padding: 0.5rem 1rem;
-  background-color: #258437;
+  background-color: #008cb9;
   color: #fff;
   border-radius: 20px;
   cursor: pointer;
