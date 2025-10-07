@@ -45,7 +45,10 @@ main {
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #008bb9a7;
 }
 
 .logo {

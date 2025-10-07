@@ -116,6 +116,7 @@ const getHourlyForecastData = async (location) => {
   }
 }
 
+// handle mouse click event
 searchBtn.addEventListener('click', () => {
   const query = search.value
   getCurrentWeather(query)
