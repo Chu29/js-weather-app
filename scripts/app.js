@@ -46,57 +46,83 @@ getLocation()
 
 // Fetch the current weather
 const getCurrentWeather = async (location) => {
-  const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
-  const response = await fetch(apiCurrentURL)
-  const data = await response.json()
-  city.innerHTML = data.location.name
-  weatherCondition.innerHTML = `${data.current.condition.text} : ${data.location.localtime}`
-  currentTemp.innerHTML = `${data.current.temp_c} &deg;C`
-  weatherImg.src = data.current.condition.icon
-  weatherImg.style.width = '224px'
+  try {
+    const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
+    const response = await fetch(apiCurrentURL)
+    if (response.ok) {
+      const data = await response.json()
+      city.innerHTML = data.location.name
+      weatherCondition.innerHTML = `${data.current.condition.text} : ${data.location.localtime}`
+      currentTemp.innerHTML = `${data.current.temp_c} &deg;C`
+      weatherImg.src = data.current.condition.icon
+      weatherImg.style.width = '224px'
+    } else {
+      throw new Error('Failed to fetch weather data')
+    }
+  } catch (error) {
+    alert(error)
+  }
 }
 
 // fetch current air conditions
 const getAirCondition = async (location) => {
-  const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
-  const response = await fetch(apiCurrentURL)
-  const data = await response.json()
-  airData[0].innerHTML = `${data.current.temp_c}&deg;C`
-  airData[1].innerHTML = `${data.current.humidity}%`
-  airData[2].innerHTML = `${data.current.wind_kph} km/h`
-  airData[3].innerHTML = `${data.current.uv}`
+  try {
+    const apiCurrentURL = `https://api.weatherapi.com/v1/current.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}`
+    const response = await fetch(apiCurrentURL)
+    if (response.ok) {
+      const data = await response.json()
+      airData[0].innerHTML = `${data.current.temp_c}&deg;C`
+      airData[1].innerHTML = `${data.current.humidity}%`
+      airData[2].innerHTML = `${data.current.wind_kph} km/h`
+      airData[3].innerHTML = `${data.current.uv}`
+    } else {
+      throw new Error('Failed to fetch weather data')
+    }
+  } catch (error) {
+    alert(error)
+  }
 }
 
 // fetch forecast data for next 7 days
 const getDailyForecastData = async (location) => {
-  const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=7`
-  const response = await fetch(apiCurrentURL)
-  const data = await response.json()
+  try {
+    const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=7`
+    const response = await fetch(apiCurrentURL)
+    if (response.ok) {
+      const data = await response.json()
 
-  const days = document.querySelectorAll('.day')
+      const days = document.querySelectorAll('.day')
 
-  const forecastTemperature = document.querySelectorAll('.fctemp')
-  const fcweatherImg = document.querySelectorAll('.fc-condition > img')
-  const fcweatherCondition = document.querySelectorAll('.fc-condition > span')
+      const forecastTemperature = document.querySelectorAll('.fctemp')
+      const fcweatherImg = document.querySelectorAll('.fc-condition > img')
+      const fcweatherCondition = document.querySelectorAll(
+        '.fc-condition > span'
+      )
 
-  data.forecast.forecastday.forEach((day, index) => {
-    let dayName = new Date(day.date).toLocaleDateString('en-US', {
-      weekday: 'short'
-    })
-    const maxTemp = data.forecast.forecastday[index].day.maxtemp_c
-    const minTemp = data.forecast.forecastday[index].day.mintemp_c
-    const img = data.forecast.forecastday[index].day.condition.icon
-    const condition = data.forecast.forecastday[index].day.condition.text
+      data.forecast.forecastday.forEach((day, index) => {
+        let dayName = new Date(day.date).toLocaleDateString('en-US', {
+          weekday: 'short'
+        })
+        const maxTemp = data.forecast.forecastday[index].day.maxtemp_c
+        const minTemp = data.forecast.forecastday[index].day.mintemp_c
+        const img = data.forecast.forecastday[index].day.condition.icon
+        const condition = data.forecast.forecastday[index].day.condition.text
 
-    if (index === 0) {
-      dayName = 'Today'
+        if (index === 0) {
+          dayName = 'Today'
+        } else {
+          days[index].textContent = dayName
+        }
+        forecastTemperature[index].innerHTML = `${maxTemp}&deg;/${minTemp}&deg;`
+        fcweatherImg[index].src = img
+        fcweatherCondition[index].innerHTML = condition
+      })
     } else {
-      days[index].textContent = dayName
+      throw new Error('Failed to fetch weather data')
     }
-    forecastTemperature[index].innerHTML = `${maxTemp}&deg;/${minTemp}&deg;`
-    fcweatherImg[index].src = img
-    fcweatherCondition[index].innerHTML = condition
-  })
+  } catch (error) {
+    alert(error)
+  }
 }
 
 // fetch hourly forecast data in 3 hours interval
@@ -104,23 +130,35 @@ const getHourlyForecastData = async (location) => {
   const hourlyCondition = [...document.querySelectorAll('.card > img')]
   const hourlyTemp = [...document.querySelectorAll('.ttemp')]
 
-  const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=1`
-  const response = await fetch(apiCurrentURL)
-  const data = await response.json()
+  try {
+    const apiCurrentURL = `https://api.weatherapi.com/v1/forecast.json?key=26f067e98b7e4aa7b3f152800252609&q=${location}&days=1`
+    const response = await fetch(apiCurrentURL)
+    if (response.ok) {
+      const data = await response.json()
 
-  const hourData = [...data.forecast.forecastday[0].hour]
-  for (let i = 0; i < hourData.length; i++) {
-    const temp = hourData[i].temp_c
-    hourlyTemp[i].innerHTML = `${temp}&deg;`
-    hourlyCondition[i].src = hourData[i].condition.icon
+      const hourData = [...data.forecast.forecastday[0].hour]
+      for (let i = 0; i < hourData.length; i++) {
+        const temp = hourData[i].temp_c
+        hourlyTemp[i].innerHTML = `${temp}&deg;`
+        hourlyCondition[i].src = hourData[i].condition.icon
+      }
+    } else {
+      throw new Error('Failed to fetch weather data')
+    }
+  } catch (error) {
+    alert(error)
   }
 }
 
 // handle mouse click event
 searchBtn.addEventListener('click', () => {
   const query = search.value
-  getCurrentWeather(query)
-  getAirCondition(query)
-  getDailyForecastData(query)
-  getHourlyForecastData(query)
+  if (query !== '') {
+    getCurrentWeather(query)
+    getAirCondition(query)
+    getDailyForecastData(query)
+    getHourlyForecastData(query)
+  }else{
+    alert("Please enter a city name")
+  }
 })
