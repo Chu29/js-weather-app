@@ -22,16 +22,28 @@ const getLocation = () => {
     // fetch the location based on coordinates
     const fetchLocation = async (lat, long) => {
       const geolocation = `https://api-bdc.io/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`
-      const response = await fetch(geolocation)
-      const data = await response.json()
-      const city = data.city
-      getCurrentWeather(city)
-      getAirCondition(city)
-      getDailyForecastData(city)
-      getHourlyForecastData(city)
+      try {
+        const response = await fetch(geolocation)
+        const data = await response.json()
+        const city = data.city
+
+        if (!city) {
+          alert('Unable to determine your city')
+          return
+        }
+
+        getCurrentWeather(city)
+        getAirCondition(city)
+        getDailyForecastData(city)
+        getHourlyForecastData(city)
+      } catch (error) {
+        console.error(error)
+
+        alert('Failed to fetch your location information.')
+      }
     }
 
-    return fetchLocation(latitude, longitude)
+    fetchLocation(latitude, longitude)
   }
 
   const error = () => {
@@ -39,7 +51,6 @@ const getLocation = () => {
   }
 
   navigator.geolocation.getCurrentPosition(getCoordinates, error)
-  return getCoordinates
 }
 
 getLocation()
@@ -51,6 +62,7 @@ const getCurrentWeather = async (location) => {
     const response = await fetch(apiCurrentURL)
     if (response.ok) {
       const data = await response.json()
+      console.log(data)
       city.innerHTML = data.location.name
       weatherCondition.innerHTML = `${data.current.condition.text} : ${data.location.localtime}`
       currentTemp.innerHTML = `${data.current.temp_c} &deg;C`
