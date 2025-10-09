@@ -158,7 +158,7 @@ searchBtn.addEventListener('click', () => {
     getAirCondition(query)
     getDailyForecastData(query)
     getHourlyForecastData(query)
-  }else{
-    alert("Please enter a city name")
+  } else {
+    alert('Please enter a city name')
   }
 })
