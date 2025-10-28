@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/weather.css" />
+    <title>Abreeze Weather App</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="nav">
+        <a href="index.html"
+          ><img src="images/clear.png" alt="" srcset="" class="logo"
+        /></a>
+      </div>
+      <div class="main">
+        <div class="search">
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="Search for cities..."
+          />
+          <span id="add-btn" class="search-btn">Search</span>
+        </div>
+        <div class="city">
+          <div class="city-left">
+            <div class="cname">
+              <h1>Search for city...</h1>
+              <p>Feels like 0&deg;C</p>
+            </div>
+            <span class="ctemp">0&deg;C</span>
+          </div>
+          <img src="images/clear.png" alt="" srcset="" />
+        </div>
+        <div class="today-forecast">
+          <h2>TODAY'S FORECAST</h2>
+          <div class="tf-cards tf-scroll">
+            <div class="card">
+              <p class="time">00:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">01:00 AM</p>
+              <img src="images/mist.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">02:00 AM</p>
+              <img src="images/clear.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">03:00 AM</p>
+              <img src="images/rain.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">04:00 AM</p>
+              <img src="images/snow.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">05:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">06:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">07:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">08:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">09:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">10:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">11:00 AM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">12:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">01:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">02:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">03:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">04:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">05:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">06:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">07:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">08:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">09:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">10:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+            <div class="card">
+              <p class="time">11:00 PM</p>
+              <img src="images/clouds.png" alt="" srcset="" />
+              <p class="ttemp">0&deg;</p>
+            </div>
+          </div>
+        </div>
+        <div class="air-conditions">
+          <h2>AIR CONDITIONS</h2>
+          <div class="ac-container">
+            <div class="ac-col-1">
+              <div class="ac-card">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+                <div class="ac-text">
+                  <p>Real Feel</p>
+                  <p class="actemp">0&deg;C</p>
+                </div>
+              </div>
+              <div class="ac-card">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="ac-text">
+                  <p>Humidity</p>
+                  <p class="acrain">0%</p>
+                </div>
+              </div>
+            </div>
+            <div class="ac-col-2">
+              <div class="ac-card">
+                <i class="fa-solid fa-wind"></i>
+                <div class="ac-text">
+                  <p>Wind</p>
+                  <p class="acwind">0.0 km/h</p>
+                </div>
+              </div>
+
+              <div class="ac-card">
+                <i class="fa-solid fa-sun"></i>
+                <div class="ac-text">
+                  <p>UV Index</p>
+                  <p class="uvindex">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forecast">
+        <h2>7-DAY FORECAST</h2>
+        <div class="fc-container">
+          <div class="fc-card">
+            <p class="day">Today</p>
+            <div class="fc-condition">
+              <img src="images/clear.png" alt="" srcset="" />
+              <span>Sunny</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Monday</p>
+            <div class="fc-condition">
+              <img src="images/clear.png" alt="" srcset="" />
+              <span>Foggy</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Tuesday</p>
+            <div class="fc-condition">
+              <img src="images/clear.png" alt="" srcset="" />
+              <span>Dizzy</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Wednesday</p>
+            <div class="fc-condition">
+              <img src="images/clouds.png" alt="" srcset="" />
+              <span>Cloudy</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Thursday</p>
+            <div class="fc-condition">
+              <img src="images/clouds.png" alt="" srcset="" />
+              <span>Cold</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Friday</p>
+            <div class="fc-condition">
+              <img src="images/rain.png" alt="" srcset="" />
+              <span>Rainy</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+          <div class="fc-card">
+            <p class="day">Saturday</p>
+            <div class="fc-condition">
+              <img src="images/clear.png" alt="" srcset="" />
+              <span>Windy</span>
+            </div>
+            <p class="fctemp">0&deg;C</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
